@@ -2,7 +2,7 @@
 """Test markdown backquote."""
 
 from textwrap import dedent
-from mdparse.transformer import MarkdownTransformer
+from mkdown.transformer import MarkdownTransformer
 
 
 def test_headers(parser):

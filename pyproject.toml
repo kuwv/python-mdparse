@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "python-mdparse"
+name = "python-mkdown"
 version = "0.1.0"
 description = "Parsing library for Markdown."
 authors = ["Jesse P. Johnson <jpj6652@gmail.com>"]
@@ -17,7 +17,7 @@ classifiers = [
     "Programming Language :: Python :: 3.10",
 ]
 packages = [
-    {include = "mdparse", from = "src"},
+    {include = "mkdown", from = "src"},
 ]
 
 [tool.poetry.dependencies]
@@ -48,7 +48,7 @@ proman-versioning = "*"
 enable_devreleases = false
 
 [[tool.proman.versioning.files]]
-filepath = "src/mdparse/__init__.py"
+filepath = "src/mkdown/__init__.py"
 pattern = "__version__ = '${version}'"
 
 [[tool.proman.versioning.files]]

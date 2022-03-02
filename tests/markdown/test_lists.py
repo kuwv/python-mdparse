@@ -4,7 +4,7 @@
 from lark import Lark
 
 from textwrap import dedent
-from mdparse.transformer import MarkdownTransformer, TreeIndenter
+from mkdown.transformer import MarkdownTransformer, TreeIndenter
 
 list_grammar = r"""\
 document: _NL* (unordered_list | ordered_list)

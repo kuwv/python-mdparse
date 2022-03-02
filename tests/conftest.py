@@ -5,15 +5,15 @@ from lark import Lark
 # from lark.load_grammar import FromPackageLoader
 from pytest import fixture
 
-from mdparse import grammar_path
-from mdparse.transformer import TreeIndenter
+from mkdown import grammar_path
+from mkdown.transformer import TreeIndenter
 
 
 @fixture()
 def parser():
     """Create parser for tests."""
     # XXX: this changes namespace with
-    # loader = FromPackageLoader('mdparse', ('grammars',))
+    # loader = FromPackageLoader('mkdown', ('grammars',))
     # grammar = """
     # start: document
 

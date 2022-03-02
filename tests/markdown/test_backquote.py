@@ -3,7 +3,7 @@
 
 from textwrap import dedent
 
-from mdparse.transformer import MarkdownTransformer
+from mkdown.transformer import MarkdownTransformer
 
 
 def test_mixed_content_backquote(parser):

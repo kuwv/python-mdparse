@@ -5,7 +5,7 @@ from textwrap import dedent
 
 from lark import Lark
 
-from mdparse.transformer import MarkdownTransformer, TreeIndenter
+from mkdown.transformer import MarkdownTransformer, TreeIndenter
 
 list_grammar = r"""\
 document: _NL* paragraph _NL*
