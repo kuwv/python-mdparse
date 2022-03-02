@@ -1,0 +1,89 @@
+document: _NL? section+
+
+?section: headings _NL (basic_syntax | section)*
+?basic_syntax:
+    | blockquote
+    | code_block
+    | table
+    | lists
+
+blockquote: (">" _NL | "> " blockquote_content+ _NL | ">" blockquote)*
+?blockquote_content: headings
+    | TEXT
+    | table
+    | lists
+
+?headings: heading6
+    | heading5
+    | heading4
+    | heading3
+    | heading2
+    | heading1
+heading6: "###### " TEXT
+heading5: "##### " TEXT
+heading4: "#### " TEXT
+heading3: "### " TEXT
+heading2: ("## " TEXT | TEXT _NL "-"+)
+heading1: ("# " TEXT | TEXT _NL "="+)
+
+// Table
+table: header alignment item+
+header: "|" (TEXT "|")+ _NL
+alignment: "|" ((fill | left | center | right) "|")+ _NL
+item: "|" (TEXT "|")+ _NL
+left: ":" fill
+center: ":" fill ":"
+right: fill ":"
+fill: "--" "-"+
+
+// List
+unordered_list: (("- " TEXT _NL) | sublist)+
+ordered_list: ((num_item _NL) | sublist)+
+num_item: INT ". " TEXT
+?sublist: _INDENT lists _DEDENT
+?lists: ordered_list | unordered_list
+
+// Code block
+code: "`" TEXT "`"
+code_block: "```" language? _NL (TEXT _NL)+ "```" _NL
+language: WORD
+
+paragraph: (TEXT _NL)+
+
+TEXT: (CNAME | NUMBER | WS_INLINE | ESCAPE_CHAR)+
+ESCAPE_CHAR: "'"
+    | "/"
+    | "\\"
+    | "`"
+    | "*"
+    | "["
+    | "]"
+    | "("
+    | ")"
+    | "\""
+    | ","
+    | "{"
+    | "}"
+    | ":"
+    | "."
+    | "-"
+    | "_"
+    | "!"
+    | "*"
+
+%declare _INDENT _DEDENT
+
+%import common.CNAME
+%import common.INT
+// %import common.NEWLINE -> _NL
+%import common.NUMBER
+%import common.WORD
+%import common.WS
+%import common.WS_INLINE
+
+// ignore whitespace
+%ignore WS
+// or ignore inline whitespace
+// %ignore WS_INLINE
+
+_NL: /(\r?\n[\t ]*)+/

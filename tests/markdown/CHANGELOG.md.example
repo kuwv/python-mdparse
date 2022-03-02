@@ -1,0 +1,90 @@
+
+Markdown
+========
+
+# H1
+## H2
+### H3
+
+# **bold text**
+
+# *italicized text*
+
+> blockquote
+
+# - First item
+# - Second item
+# - Third item
+
+# 1. First item
+# 2. Second item
+# 3. Third item
+
+# `code`
+
+# ---
+
+# [title](https://www.example.com)
+
+# ![alt text](image.jpg)
+
+### changed
+
+# 1. this is a numbered sentence
+# 2. this is the second numbered sentence
+
+# - this is an unordered list item
+# - this is a second unordered item
+
+> #### The quarterly results look great!
+>
+> - Revenue was off the chart.
+> - Profits were higher than ever.
+>
+> *Everything* is going according to **plan**.
+
+> Dorothy followed her through many of the beautiful rooms in her castle.
+>
+>> The Witch bade her clean the pots and kettles and sweep the floor and keep the fire fed with wood.
+
+### Fenced Code Blocks
+
+```
+{
+  "firstName": "John",
+  "lastName": "Smith",
+  "age": 25
+}
+```
+
+### Syntax Highlighting
+
+```json
+{
+  "firstName": "John",
+  "lastName": "Smith",
+  "age": 25
+}
+```
+
+### Footnotes
+
+### Heading ID's
+
+#### My Great Heading {custom-id}
+
+# [Heading IDs](custom-id)
+
+### Tables
+
+| Syntax      | Description |
+| ----------- | ----------- |
+| Header      | Title       |
+| Paragraph   | Text        |
+
+### Alignment
+
+| Syntax      | Description | Test Text     |
+| :---        |    :----:   |          ---: |
+| Header      | Title       | Here's this   |
+| Paragraph   | Text        | And more      |
